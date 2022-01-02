@@ -1,0 +1,28 @@
+{
+  "name": "serverless-express",
+  "version": "0.1.0",
+  "description": "Starter serverless express in typscript",
+  "scripts": {
+    "test": "need implemented",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.64",
+    "@types/compression": "^1.7.2",
+    "@types/jest": "^26.0.14",
+    "serverless": "^2.70.0",
+    "serverless-dotenv-plugin": "^3.0.0",
+    "serverless-offline": "^8.3.1"
+  },
+  "dependencies": {
+    "@types/aws-serverless-express": "^3.3.5",
+    "@types/cors": "^2.8.12",
+    "aws-serverless-express": "^3.3.8",
+    "body-parser": "^1.19.1",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.2"
+  }
+}

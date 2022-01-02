@@ -1,0 +1,32 @@
+service: serverless-express-starter
+
+frameworkVersion: 2.70.0
+
+package:
+  individually: true
+
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin
+
+custom:
+  constants: ${file(./env.yml):CONSTANTS}
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: ${opt:stage}
+  region: ${self:custom.constants.REGION}
+
+functions:
+  http:
+    handler: dist/src/lambda.handler
+    events:
+      - http:
+          cors: true
+          path: '/'
+          method: any
+      - http:
+          cors: true
+          path: '{proxy+}'
+          method: any
