@@ -16,6 +16,9 @@
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
     "eslint": "^8.6.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "prettier": "^2.5.1",
     "serverless": "^2.70.0",
     "serverless-dotenv-plugin": "^3.0.0",
     "serverless-offline": "^8.3.1"
