@@ -1,8 +1,8 @@
-import express, { Request, Response } from "express";
-import { json, urlencoded } from "body-parser";
-import compress from "compression";
-import * as http from "http";
-import cors from "cors";
+import express, { Request, Response } from 'express';
+import { json, urlencoded } from 'body-parser';
+import compress from 'compression';
+import * as http from 'http';
+import cors from 'cors';
 
 export class App {
   private port: string;
@@ -18,7 +18,7 @@ export class App {
     this.express.use(compress());
     this.express.use(cors());
 
-    this.express.get("/", (_req: Request, res: Response) => {
+    this.express.get('/', (_req: Request, res: Response) => {
       res.send({ message: `Serverless express running!` });
     });
   }
@@ -37,7 +37,7 @@ export class App {
         console.log(
           `App is running at http://localhost:${
             this.port
-          } in ${this.express.get("env")} mode`
+          } in ${this.express.get('env')} mode`
         );
         resolve();
       });
