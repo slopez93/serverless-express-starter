@@ -5,6 +5,7 @@
   "scripts": {
     "test": "need implemented",
     "build": "tsc",
+    "start:offline": "serverless offline start --stage dev",
     "lint": "eslint . --ext .ts"
   },
   "author": "",
@@ -12,6 +13,7 @@
   "devDependencies": {
     "@types/aws-lambda": "^8.10.64",
     "@types/compression": "^1.7.2",
+    "@types/glob": "^7.2.0",
     "@types/jest": "^26.0.14",
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
@@ -30,6 +32,9 @@
     "body-parser": "^1.19.1",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "express-promise-router": "^4.1.1",
+    "glob": "^7.1.6",
+    "http-status": "^1.5.0"
   }
 }

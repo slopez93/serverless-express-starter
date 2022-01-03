@@ -1,30 +1,39 @@
 import express, { Request, Response } from 'express';
 import { json, urlencoded } from 'body-parser';
+import Router from 'express-promise-router';
 import compress from 'compression';
 import * as http from 'http';
 import cors from 'cors';
 
+import { registerRoutes } from './routes';
+import httpStatus from 'http-status';
+
 export class App {
   private port: string;
-  private express: express.Express;
+  private app: express.Express;
   private httpServer?: http.Server;
 
   constructor(port: string) {
     this.port = port;
-    this.express = express();
+    this.app = express();
 
-    this.express.use(json());
-    this.express.use(urlencoded({ extended: true }));
-    this.express.use(compress());
-    this.express.use(cors());
+    this.app.use(json());
+    this.app.use(urlencoded({ extended: true }));
+    this.app.use(compress());
+    this.app.use(cors());
+    const router = Router();
 
-    this.express.get('/', (_req: Request, res: Response) => {
-      res.send({ message: `Serverless express running!` });
+    this.app.use(router);
+
+    registerRoutes(router);
+
+    router.use((err: Error, _req: Request, res: Response) => {
+      res.status(httpStatus.INTERNAL_SERVER_ERROR).send(err.message);
     });
   }
 
   getExpress() {
-    return this.express;
+    return this.app;
   }
 
   getHTTPServer() {
@@ -33,11 +42,11 @@ export class App {
 
   async listen(): Promise<void> {
     return new Promise((resolve) => {
-      this.httpServer = this.express.listen(this.port, () => {
+      this.httpServer = this.app.listen(this.port, () => {
         console.log(
-          `App is running at http://localhost:${
-            this.port
-          } in ${this.express.get('env')} mode`
+          `App is running at http://localhost:${this.port} in ${this.app.get(
+            'env'
+          )} mode`
         );
         resolve();
       });
