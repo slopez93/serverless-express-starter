@@ -4,7 +4,8 @@
   "description": "Starter serverless express in typscript",
   "scripts": {
     "test": "need implemented",
-    "build": "tsc"
+    "build": "tsc",
+    "lint": "eslint . --ext .ts"
   },
   "author": "",
   "license": "MIT",
@@ -12,6 +13,9 @@
     "@types/aws-lambda": "^8.10.64",
     "@types/compression": "^1.7.2",
     "@types/jest": "^26.0.14",
+    "@typescript-eslint/eslint-plugin": "^5.8.1",
+    "@typescript-eslint/parser": "^5.8.1",
+    "eslint": "^8.6.0",
     "serverless": "^2.70.0",
     "serverless-dotenv-plugin": "^3.0.0",
     "serverless-offline": "^8.3.1"
