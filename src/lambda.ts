@@ -8,7 +8,7 @@ let cachedServer: Server;
 const bootstrapServer = async (): Promise<Server> => {
   const port = '3000';
   const app = new App(port);
-  return awsServerlessExpress.createServer(app.getExpress());
+  return awsServerlessExpress.createServer(app.getApp());
 };
 
 export const handler: APIGatewayProxyHandler = async (event, context) => {
