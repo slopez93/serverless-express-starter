@@ -32,7 +32,7 @@ export class App {
     });
   }
 
-  getExpress() {
+  getApp() {
     return this.app;
   }
 
