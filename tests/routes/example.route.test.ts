@@ -3,7 +3,8 @@ import request from 'supertest';
 import { App } from '../../src/server';
 
 describe('GET /', () => {
-  const app = new App('3000').getApp();
+  const port = '3000';
+  const app = new App(port).getApp();
 
   test('when http request on / then return 200 success response', async () => {
     await request(app)
