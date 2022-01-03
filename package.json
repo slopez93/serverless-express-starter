@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Starter serverless express in typscript",
   "scripts": {
-    "test": "need implemented",
+    "test": "jest",
     "build": "tsc",
     "start:offline": "serverless offline start --stage dev",
     "lint": "eslint . --ext .ts"
@@ -14,16 +14,18 @@
     "@types/aws-lambda": "^8.10.64",
     "@types/compression": "^1.7.2",
     "@types/glob": "^7.2.0",
-    "@types/jest": "^26.0.14",
+    "@types/jest": "^27.4.0",
     "@typescript-eslint/eslint-plugin": "^5.8.1",
     "@typescript-eslint/parser": "^5.8.1",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.4.5",
     "prettier": "^2.5.1",
     "serverless": "^2.70.0",
     "serverless-dotenv-plugin": "^3.0.0",
-    "serverless-offline": "^8.3.1"
+    "serverless-offline": "^8.3.1",
+    "ts-jest": "^27.1.2"
   },
   "dependencies": {
     "@types/aws-serverless-express": "^3.3.5",
